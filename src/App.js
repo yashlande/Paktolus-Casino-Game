@@ -16,6 +16,10 @@ export default function App() {
   }
 
   const bigWin = () => {
+    setPlayBlance(prevBal => prevBal + 2);
+  }
+
+  const bigbigWin = () => {
     setPlayBlance(prevBal => prevBal + 5);
   }
 
@@ -35,7 +39,7 @@ export default function App() {
       </div>
       <div>
         {showConfirmation &&
-          <Spinnerr bal={playBalance} onClose={showConfirmations} normalSpin={spin} normalWin={normalWin} bigWin={bigWin} />
+          <Spinnerr bal={playBalance} onClose={showConfirmations} normalSpin={spin} normalWin={normalWin} bigWin={bigWin} bigbigWin={bigbigWin} />
         }
       </div>
       <footer>

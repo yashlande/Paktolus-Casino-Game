@@ -76,7 +76,11 @@ class Spinnerr extends React.Component {
         this.props.normalWin();
       }else if(second===third){
         this.props.normalWin();
+      }else if(results && first===-564){
+        this.props.bigbigwin();
       }
+
+
       this.setState({ winner: results });
     }
   }
@@ -159,7 +163,7 @@ class Spinner extends React.Component {
   speed = Spinner.iconHeight * this.multiplier;    
 
   setStartPosition() {
-    return ((Math.floor((Math.random()*9))) * Spinner.iconHeight)*-1;
+    return ((Math.floor((Math.random()*4))) * Spinner.iconHeight)*-1;
   }
 
   moveBackground() {
@@ -171,7 +175,7 @@ class Spinner extends React.Component {
 
   getSymbolFromPosition() {
     let { position } = this.state;
-    const totalSymbols = 9;
+    const totalSymbols = 4;
     const maxPosition = (Spinner.iconHeight * (totalSymbols-1)*-1);
     let moved = (this.props.timer/100) * this.multiplier
     let startPosition = this.start;
@@ -224,11 +228,3 @@ class Spinner extends React.Component {
 }
 
 export default Spinnerr
-// function runApp() {
-//   ReactDOM.render(
-//     <App />,
-//     rootElement
-//   )
-// }
-  
-// runApp();
